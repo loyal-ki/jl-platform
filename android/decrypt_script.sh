@@ -1,0 +1,1 @@
+gpg --quiet --batch --yes --decrypt --passphrase="$KEYSTORE_KEY" --output app/JourneyLingua.keystore app/JourneyLingua.keystore.gpg

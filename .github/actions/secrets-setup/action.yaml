@@ -1,0 +1,23 @@
+name: Secrets setup
+
+description: Writes secrets
+
+runs:
+  using: 'composite'
+  steps:
+    - name: ci/install-gnupg
+      env:
+        HOMEBREW_NO_AUTO_UPDATE: "1"
+      shell: bash
+      run: |
+        echo "::group::install-gnupg"
+        brew install gnupg
+        echo "::endgroup::"
+
+    - name: Write Keystore file
+      shell: bash
+      run: |
+        cd android 
+        chmod +x ./decrypt_script.sh
+      env:
+        KEYSTORE_KEY: ${{ inputs.KEYSTORE_KEY }}

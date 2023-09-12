@@ -1,0 +1,13 @@
+export const progressHeight = 4;
+export const progressColor = '#0065FE';
+export const progressBackgroundColor = '#EDEFF2';
+export const progressPivotPaddingHorizontal = 4;
+export const progressPivotTextColor = '#FFFFFF';
+export const progressPivotFontSize = 12;
+export const progressPivotLineHeightScale = 1.6;
+export const progressPivotBackgroundColor = '#0065FE';
+export const progressPageBackgroundColor = '#FFFFFF';
+export const progressPageTextFontSize = 15;
+export const progressPageTextLineHeight = 22;
+export const progressPageTextColor = '#8C9199';
+export const progressPageButtonWidth = 156;

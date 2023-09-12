@@ -1,0 +1,3 @@
+type LocaleStateInterface = {
+    locale: string;
+};

@@ -1,0 +1,25 @@
+name: ios-build
+description: Action to prepare environment for ios build
+
+runs:
+  using: composite
+  steps:
+    - name: ci/install-os-deps
+      env:
+        HOMEBREW_NO_AUTO_UPDATE: "1"
+      shell: bash
+      run: |
+        echo "::group::install-os-deps"
+        brew install watchman
+        echo "::endgroup::"
+
+    - name: ci/mobile-build
+      uses: ./.github/actions/mobile-build
+
+    - name: ci/install-pods-dependencies
+      shell: bash
+      run: |
+        echo "::group::install-pods-dependencies"        
+        yarn ios-gems
+        yarn pod-install
+        echo "::endgroup::"
